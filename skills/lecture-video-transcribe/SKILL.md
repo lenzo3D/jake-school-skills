@@ -1,11 +1,11 @@
 ---
 name: lecture-video-transcribe
-description: Turn a recorded lecture video (Kaltura, Panopto, Echo360, Teams or Stream, Zoom recordings, or any file) into a timestamped Markdown transcript saved next to the slides, so Claude can search and cite it like a source. Use whenever the user gives a lecture video link or file, asks to transcribe, summarise or take notes from a lecture recording, wants a lecture video "turned into a source", or says to watch the lecture for them. Works with the school learning portal in the browser, but the user signs in themselves. Not for live meetings.
+description: Turn a recorded lecture video (Kaltura, Panopto, Echo360, Teams or Stream, Zoom recordings, or any file) into a timestamped Markdown transcript saved next to the slides, so Claude can search and use it like a source. Use whenever the user gives a lecture video link or file, asks to transcribe, summarise or take notes from a lecture recording, wants a lecture video "turned into a source", or says to watch the lecture for them. Works with the school learning portal in the browser, but the user signs in themselves. Not for live meetings.
 ---
 
 # Lecture video to usable source
 
-Goal: one Markdown file per lecture in `<topic folder>/sources/text/`, with `[hh:mm:ss]` markers, that the other school skills (answering coursework, quizzes, Kahoot mock) can read and cite exactly like slides.
+Goal: one Markdown file per lecture in `<topic folder>/sources/text/`, with `[hh:mm:ss]` markers, that the other school skills (answering coursework, quizzes, Kahoot mock) can read and use exactly like slides.
 
 ## The honest part, tell the user up front
 
@@ -54,4 +54,4 @@ Goal: one Markdown file per lecture in `<topic folder>/sources/text/`, with `[hh
 - Lecture recordings belong to the school. Keep transcripts for personal study. Do not publish them or put them in a public repo, and do not share the video file.
 - Respect the platform: if downloads are disabled, use captions or ask the lecturer. Do not bypass access controls.
 - Say plainly that the transcript is machine-made and unchecked. Never cite a transcript figure as fact without a slide or the user's confirmation. Mark such figures as "from the lecture recording, unconfirmed".
-- Cite timestamps the way slides are cited, for example "(Lecture 5 video, 23:40)".
+- Keep the `[hh:mm:ss]` markers in the transcript for finding things, but do not cite timestamps in the user's work.

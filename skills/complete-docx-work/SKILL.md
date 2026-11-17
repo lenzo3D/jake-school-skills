@@ -32,7 +32,7 @@ The user's rules: edit the Word doc directly and do not change the font, format 
    `cp "<document>.docx" "$SCRATCH/pristine.docx"`
    Every fill runs from the pristine copy, so reruns never stack answers.
 
-3. **Read the sources that the questions need.** Open the relevant `.txt` files in `sources/text/`. Read the parts the questions point to: the regulation paragraphs, the checklist, the slides, the case article. Note page and slide numbers for citations.
+3. **Read the sources that the questions need.** Open the relevant `.txt` files in `sources/text/`. Read the parts the questions point to: the regulation paragraphs, the checklist, the slides, the case article. Use them for the content of the answers only. Do not put slide, page or timestamp citations in the answers.
 
 4. **Map the document.** Run:
    `python3 ~/.claude/skills/complete-docx-work/scripts/inspect_docx.py "$SCRATCH/pristine.docx"`
@@ -55,7 +55,7 @@ The user's rules: edit the Word doc directly and do not change the font, format 
   "colour": "5B9BD5",
   "inserts": [
     {"after_question": "Question 1", "lines": ["Banks borrow short and lend long. ...", "The risk becomes systemic because ..."]},
-    {"after_question": "Question 2", "lines": ["Answer:", "Under MAS Notice 656 (para 7) ..."]},
+    {"after_question": "Question 2", "lines": ["Answer:", "Under the notice, the limit is ..."]},
     {"after_text": "To provide an overview", "lines": ["Answer: the three stages are ..."]}
   ],
   "table_fills": [
@@ -77,7 +77,7 @@ The user has asked for shorter, human answers more than once. For tutorials and 
 - Answer in the first sentence, then give the reasons or the working.
 - Plain words and short sentences. Write like a student who knows the material in an exam, not like a textbook or a chatbot.
 - Avoid: "delve", "crucial", "it is important to note", "moreover", "in conclusion", "in summary", "robust", "a testament to", em dashes, bold text, headings inside an answer, and "Specifically" as a sentence opener.
-- Cite sources briefly, e.g. (MAS 656, para 7) or (Lecture 1, slide 23).
+- Do not cite lecture slides, page numbers or timestamps in the answers. Use the sources for the content only.
 - Show working for calculations, one line per step.
 - Keep each sub-answer to about 2 to 5 sentences. Give parts (a) to (d) their own lines.
 - Flag stray or unclear data in the question. Say what you ignored and why.
@@ -88,9 +88,9 @@ The user has asked for shorter, human answers more than once. For tutorials and 
 - Follow the brief first: required structure, headings, word count, referencing style and any limits. Write to each rubric criterion so a marker can find it.
 - Full academic prose: clear paragraphs with a point, evidence from the imported sources, and a link back to the question. Use the document's own headings and template, and add headings only where the brief asks for them.
 - Plain, natural wording. Avoid padding and the filler listed above. No em dashes.
-- Cite properly in the style the brief asks for. Cite only sources that were imported or that the user gave. Never invent references, figures or quotes. If evidence is missing, say what is missing and ask the user.
+- Do not cite lecture slides, page numbers or timestamps. Only if the brief explicitly asks for a reference list of external sources, follow the style it names, using only sources the user gave. Never invent references, figures or quotes. If evidence is missing, say what is missing and ask the user.
 - Keep within the word count. Report the count.
-- The user stays responsible for the work: tell them to read it, check every figure and citation, and follow their school's AI-use and disclosure rules.
+- The user stays responsible for the work: tell them to read it, check every figure, and follow their school's AI-use and disclosure rules.
 
 ## Gotchas
 

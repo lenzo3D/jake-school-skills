@@ -5,7 +5,7 @@ description: Import the course files that any piece of coursework (tutorial, hom
 
 # Import source files
 
-This is step 1 of 3 in the coursework pipeline (import, complete, explain). Its job is to turn each source file into text, kept in the project folder, so that the answering step can find paragraphs and slides to cite.
+This is step 1 of 3 in the coursework pipeline (import, complete, explain). Its job is to turn each source file into text, kept in the project folder, so that later steps can find the right paragraphs and slides.
 
 ## Steps
 
@@ -17,7 +17,7 @@ This is step 1 of 3 in the coursework pipeline (import, complete, explain). Its 
    python3 ~/.claude/skills/import-sources/scripts/extract_sources.py "<project>/sources" "<project>/sources/text"
    ```
 
-   It writes one `.txt` per source into `sources/text/`. PDFs keep `##### PAGE n` markers, and PPTX files keep `##### SLIDE n` markers, so answers can cite them. Lock files (`~$...`) and hidden files are skipped.
+   It writes one `.txt` per source into `sources/text/`. PDFs keep `##### PAGE n` markers, and PPTX files keep `##### SLIDE n` markers, so the AI can find the right page or slide when it reads them. Lock files (`~$...`) and hidden files are skipped.
 
 3. **Check the output.** Look at the character counts the script prints. A PDF that prints almost nothing is probably scanned images. Say so to the user and ask for a text version, because pypdf cannot read images. Read enough of each file to know what it covers, and note the paragraph numbers, section headings or slide numbers you will need.
 

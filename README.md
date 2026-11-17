@@ -40,21 +40,21 @@ School/
 **Before you run it:** Install the other skills too, since it only points to them. The clickable widget is a Claude Code feature (the AskUserQuestion tool). On assistants without it, it falls back to a numbered list you reply to.
 
 ### 2. import-sources
-**Purpose:** Turn course files (PDF, PowerPoint, Word, text) into plain text the AI can search and cite. Most other skills depend on this one.
+**Purpose:** Turn course files (PDF, PowerPoint, Word, text) into plain text the AI can search and use. Most other skills depend on this one.
 **Use it when:** You start a topic, or drop in new slides, notices or readings.
-**What it does:** Extracts each file into `sources/text/`. PDFs keep `##### PAGE n` markers and slides keep `##### SLIDE n` markers, so answers can cite a page or slide.
+**What it does:** Extracts each file into `sources/text/`. PDFs keep `##### PAGE n` markers and slides keep `##### SLIDE n` markers, so the AI can find the right page or slide.
 **Before you run it:** Put the files in `<topic folder>/sources/`. Needs `pypdf` for PDFs. PowerPoint and Word need nothing extra. A scanned PDF (images only) gives no text, so ask for a text version.
 
 ### 3. complete-docx-work
 **Purpose:** Complete any Word-based coursework inside your original file without changing its fonts, layout or formatting. It is not only for tutorials or homework: it can complete your assignments as well.
-**Use it when:** You have a `.docx` tutorial, homework, case study or assignment and want answers written into it, cited to your slides. For an assignment, include its brief and marking rubric in `sources/` so the work is written to the criteria.
+**Use it when:** You have a `.docx` tutorial, homework, case study or assignment and want answers written into it from your slides. For an assignment, include its brief and marking rubric in `sources/` so the work is written to the criteria.
 **What it does:** First asks, with a clickable widget, whether this is a tutorial or homework, or an assignment. Tutorials and homework get short answers in light blue. Assignments get plain default text that matches your document, written to the brief and rubric. Then it keeps a pristine copy, maps the document, writes the answers under each question, copies the body font, and checks every original paragraph is still there in order.
-**Before you run it:** Run skill 1 first so answers can cite your sources. Needs `python-docx`. Close the file in Word first, or the save is blocked. The original is never edited; it works on a copy in `work/`.
+**Before you run it:** Run skill 1 first so answers are based on your sources. Needs `python-docx`. Close the file in Word first, or the save is blocked. The original is never edited; it works on a copy in `work/`.
 
 ### 4. explain-my-work
 **Purpose:** Write a separate Word file that explains your answers in more depth, to talk through with a teacher.
 **Use it when:** The work is completed and you want to prepare to talk through it with a teacher.
-**What it does:** For each question: a short answer, step-by-step reasoning with traps, likely follow-up questions with answers, and sources. It ends with a glossary and says clearly what came from the sources and what is the AI's own reasoning.
+**What it does:** For each question: a short answer, step-by-step reasoning with traps, and likely follow-up questions with answers. It ends with a glossary and says clearly what came from the sources and what is the AI's own reasoning.
 **Before you run it:** Run skills 1 and 2 first. Needs `python-docx`.
 
 ### 5. revision-widget
@@ -64,7 +64,7 @@ School/
 **Before you run it:** Run skill 1 first. Open the finished file in Chrome or Edge (Safari can block saving for local files). The AI computes numeric answers with Python and never from memory. To log results, use skill 7.
 
 ### 6. lecture-video-transcribe
-**Purpose:** Turn a recorded lecture into a timestamped Markdown transcript that the AI can cite like slides.
+**Purpose:** Turn a recorded lecture into a timestamped Markdown transcript that the AI can use like slides.
 **Use it when:** The lecturer posts a recording and you want it as a source, or you want notes and a topic summary from it.
 **What it does:** Tries the player's captions first. If there are none, it downloads the audio and transcribes it on your computer with `faster-whisper`. It saves the transcript with a topic summary mapped to your slides and a list of likely recognition errors.
 **Before you run it:**

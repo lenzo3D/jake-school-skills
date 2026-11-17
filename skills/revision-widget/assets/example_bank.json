@@ -74,7 +74,7 @@
      "The HPR divided by the number of years"
     ],
     "a": 1,
-    "exp": "Dollar-weighted return = the IRR of the investor's own cash flows (Topic 1 slides 38 and 39), so it depends on when money goes in and out."
+    "exp": "Dollar-weighted return = the IRR of the investor's own cash flows, so it depends on when money goes in and out."
    },
    {
     "id": "IV-6",
@@ -473,7 +473,7 @@
      "Up to 1 year only"
     ],
     "a": 1,
-    "exp": "Equipment up to 8 years with financing up to 90%. Commercial property up to 30 years. Working capital up to 5 years unsecured (Lecture 2, slides 19 and 20)."
+    "exp": "Equipment up to 8 years with financing up to 90%. Commercial property up to 30 years. Working capital up to 5 years unsecured."
    },
    {
     "id": "CB-21",
@@ -487,7 +487,7 @@
      "Always secured on the borrower's house"
     ],
     "a": 1,
-    "exp": "Revolving credit and overdraft: draw up to a limit, repay and redraw, priced at prime plus a margin, reviewed yearly, and the bank has little control over usage (slides 9 to 11)."
+    "exp": "Revolving credit and overdraft: draw up to a limit, repay and redraw, priced at prime plus a margin, reviewed yearly, and the bank has little control over usage."
    }
   ]
  }

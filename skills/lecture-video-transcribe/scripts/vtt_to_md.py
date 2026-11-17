@@ -81,7 +81,7 @@ def main():
         f"Source: captions file {os.path.basename(a.captions)} from the video player",
         f"Converted on {datetime.date.today().isoformat()}. Length: {ts(dur)}", "",
         "These are the platform's captions, usually automatic. Names, acronyms, numbers and formulas can be wrong. "
-        "Check any figure against the lecture slides before using it in an answer. Cite as [mm:ss] or [hh:mm:ss].",
+        "Check any figure against the lecture slides before using it in an answer.",
         "", "---", "",
     ]
     for s, t in paras:

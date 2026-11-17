@@ -7,8 +7,7 @@ Usage:
 
 Runs fully on this computer with faster-whisper (pip install --user faster-whisper).
 No system ffmpeg is needed: faster-whisper decodes audio through PyAV.
-Output has [HH:MM:SS] markers every paragraph so answers can cite times, the way slide
-numbers are cited. The file says plainly that it is a machine transcript.
+Output has [HH:MM:SS] markers every paragraph so the right part of the lecture is easy to find. The file says plainly that it is a machine transcript.
 """
 import argparse
 import datetime
@@ -63,7 +62,7 @@ def render(title, source_name, model, lang, duration, paras, speed_note):
         f"Length: {ts(duration)}",
         "",
         "This is a machine transcript, not a word-for-word record. Names, acronyms, numbers and formulas can be wrong. "
-        "Check any figure against the lecture slides before using it in an answer. Cite as [mm:ss] or [hh:mm:ss].",
+        "Check any figure against the lecture slides before using it in an answer.",
         "",
         "---",
         "",

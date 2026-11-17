@@ -29,7 +29,7 @@ Be honest with the user about the limits: the scoring formula and streak bonus a
    - Spread the correct answers across red, blue, yellow and green. No colour more than 4 of 10.
    - Cover the whole lecture in slide order, weighted to what a lecturer would ask: definitions, which-one-is-it classification, "which is NOT", short applications.
    - Each question stands alone. No "Scenario A", "the above" or "the same loan".
-   - `exp`: one or two sentences with the rule and the slide number, shown after the question and in the final review.
+   - `exp`: one or two sentences with the rule, shown after the question and in the final review.
    - Compute any number with Python. Never answer from memory.
    - If the user has logged weak spots for this topic in `study-log/STUDY_LOG.md`, include one or two questions on them.
 3. **Save the bank** as `<topic folder>/revision/<topic>_kahoot_bank.json`: a list of `{"q":..., "o":[4], "a":0-3, "exp":..., "t": optional per-question seconds}`.

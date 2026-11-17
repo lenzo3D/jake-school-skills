@@ -1,6 +1,6 @@
 ---
 name: explain-my-work
-description: Write a separate Word file that explains the answers in completed coursework (tutorial, homework, assignment or case study) in enough detail for a student to talk through with a teacher, including the reasoning, traps to avoid, likely follow-up questions and sources. Use this whenever the user asks for an explanation file, a study guide or notes to prepare for the teacher's questions, or "how to explain" the answers, after the work has been completed. Requires the work to be completed (see complete-docx-work) and the sources to be imported (see import-sources).
+description: Write a separate Word file that explains the answers in completed coursework (tutorial, homework, assignment or case study) in enough detail for a student to talk through with a teacher, including the reasoning, traps to avoid, and likely follow-up questions. Use this whenever the user asks for an explanation file, a study guide or notes to prepare for the teacher's questions, or "how to explain" the answers, after the work has been completed. Requires the work to be completed (see complete-docx-work) and the sources to be imported (see import-sources).
 ---
 
 # Explanation file for the teacher
@@ -11,7 +11,7 @@ This is step 3 of 3. The explanation file is separate from the completed work. I
 
 1. **Read the answers as they stand.** Take the text of the completed work so the explanation matches what the student will hand in. For tutorials and homework the answers are the light-blue paragraphs and cells. For an assignment they are plain text, so read the whole document (compare with the original if you still have it). Read the question text too. Do not write a different answer from the one in the work. If you find a wrong figure or claim, fix the work first, using `complete-docx-work`, and then come back here.
 
-2. **Read the sources you cite.** Use `sources/text/` from the import step. Check the paragraph and slide numbers you will quote.
+2. **Read the sources you rely on.** Use `sources/text/` from the import step and check the facts you will state. Do not cite slide or page numbers in the file.
 
 3. **Write `explain.md`** in the scratchpad, using the structure below.
 
@@ -26,7 +26,6 @@ This is step 3 of 3. The explanation file is separate from the completed work. I
 - **Short answer:** two or three sentences.
 - **Step by step:** the reasoning in order, including the traps. For example, testing the individual companies instead of the group totals.
 - **Likely follow-up questions:** two or three, each with a short answer.
-- **Sources to cite:** paragraph numbers, slide numbers and article titles.
 
 End the file with a short glossary of the key terms.
 

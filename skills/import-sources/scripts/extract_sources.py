@@ -4,7 +4,7 @@
 Usage: python3 extract_sources.py <source_dir> <out_dir>
 
 Writes one .txt per source file into out_dir. Page and slide markers are kept
-so answers can cite them (e.g. "MAS 656 para 7", "Lecture 1, slide 23").
+so the AI can find the right page or slide when it reads them.
 Needs pypdf for PDFs (pip install --user pypdf). PPTX and DOCX use only the
 standard library.
 """
