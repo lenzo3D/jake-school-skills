@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#1c2230;--mute:#5d6678;--line:#d9dde5;--accent:#2f5fd0;--ok:#1a7f4b;--okbg:#e6f5ec;--bad:#b3261e;--badbg:#fcebea;--m1:#2f5fd0;--m2:#7a3fc4;--m3:#b35c00;--m4:#0f7a7a}
+@media (prefers-color-scheme:dark){:root{--bg:#12151c;--card:#1b2029;--ink:#e8ebf2;--mute:#9aa3b5;--line:#2e3543;--accent:#7ea2ff;--ok:#5fd394;--okbg:#14301f;--bad:#ff8a80;--badbg:#3a1c1a;--m1:#7ea2ff;--m2:#c19bff;--m3:#ffb35c;--m4:#5fd6d6}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px 80px}
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:10px 0}
+h1{font-size:1.15rem;margin:0 0 6px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.9rem;color:var(--mute)}
+.bar b{color:var(--ink)}
+nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+nav a{font-size:.82rem;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:var(--card)}
+nav a span{color:var(--mute)}
+.saved{margin-left:auto;font-size:.8rem}
+.intro{margin:16px 0;color:var(--mute);font-size:.92rem}
+section.mod{margin:28px 0;border-top:4px solid var(--mc);padding-top:4px;scroll-margin-top:110px}
+section.mod h2{font-size:1.2rem;margin:10px 0 2px;color:var(--mc)}
+.modtag{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mc);font-weight:600}
+.focus{color:var(--mute);font-size:.9rem;margin:0 0 6px}
+.modscore{display:inline-block;font-size:.85rem;border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--card);margin-bottom:8px}
+details.sheet{margin:6px 0 4px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:.92rem}
+details.sheet summary{cursor:pointer;color:var(--mc);font-weight:600}
+details.sheet ul,details.sheet ol{margin:4px 0 8px;padding-left:20px}
+h3.sec{font-size:.95rem;margin:20px 0 8px;padding:4px 10px;background:var(--card);border-left:3px solid var(--mc);border-radius:4px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 14px 12px;margin:10px 0}
+.q.ok{border-color:var(--ok)}.q.bad{border-color:var(--bad)}
+.qid{font-size:.75rem;color:var(--mute);font-weight:600}
+.qt{margin:2px 0 10px}
+.hint{font-size:.85rem;color:var(--mute);margin:-4px 0 8px}
+.opt{display:flex;gap:8px;align-items:flex-start;padding:6px 8px;border:1px solid var(--line);border-radius:8px;margin:5px 0;cursor:pointer}
+.opt input{margin-top:4px}
+.opt.sel{border-color:var(--accent)}
+.opt.right{border-color:var(--ok);background:var(--okbg)}
+.opt.wrong{border-color:var(--bad);background:var(--badbg)}
+.q.done .opt{cursor:default}
+input[type=text]{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:200px;max-width:100%}
+input[type=text]:disabled{opacity:.8}
+button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:#fff;padding:7px 14px}
+button.ghost{background:transparent;color:var(--accent)}
+button.danger{border-color:var(--bad);background:transparent;color:var(--bad)}
+button.sm{padding:3px 10px;font-size:.85rem}
+button:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.fb{margin-top:10px;padding:10px 12px;border-radius:8px;font-size:.92rem}
+.fb.ok{background:var(--okbg);color:var(--ink);border-left:4px solid var(--ok)}
+.fb.bad{background:var(--badbg);color:var(--ink);border-left:4px solid var(--bad)}
+.fb b{display:block;margin-bottom:2px}
+#results{margin-top:36px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;scroll-margin-top:110px}
+#results h2{margin:0 0 8px;font-size:1.15rem}
+table{border-collapse:collapse;width:100%;font-size:.92rem;margin:8px 0}
+th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+textarea{width:100%;min-height:280px;font:13px/1.45 ui-monospace,Menlo,Consolas,monospace;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.note{font-size:.85rem;color:var(--mute)}
+.warn{color:var(--bad)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<h1>__TITLE__</h1>
+<div class="bar"><span>Answered <b id="nAns">0</b> of <b id="nTot">0</b></span><span>Correct <b id="nOk">0</b></span><span>Wrong <b id="nBad">0</b></span><span class="saved" id="saved"></span><span id="topReset"><button class="danger sm" id="rs2">Reset quiz</button><span id="rsAsk2" hidden><span class="warn">Erase every answer?</span> <button class="danger sm" id="rsYes2">Yes, erase</button> <button class="ghost sm" id="rsNo2">Cancel</button></span></span></div>
+<nav id="nav"></nav>
+</header>
+<p class="intro">Answer each question, then press Check. A checked question locks and shows the working. Where a module has a formula sheet, open it only after you have tried, because the point is to recall it yourself. Your answers are saved in this browser, so switching tabs or reloading will not reset them. When you are done, go to the results box at the bottom and press Build log prompt, then paste it into Claude Code.</p>
+<main id="app"></main>
+<div id="results">
+<h2>Results and log prompt</h2>
+<div id="resBody"></div>
+<div class="row"><button id="mk">Build log prompt</button><button class="ghost" id="cp" disabled>Copy prompt</button><span class="note" id="cpMsg"></span></div>
+<textarea id="prompt" readonly placeholder="Press Build log prompt. It lists what you got right and wrong, with your answers and the correct rules, ready to paste into Claude Code."></textarea>
+<div class="row"><button class="danger" id="rs">Reset all answers</button><span id="rsAsk" hidden><span class="warn">Erase every answer?</span> <button class="danger" id="rsYes">Yes, erase</button> <button class="ghost" id="rsNo">Cancel</button></span></div>
+</div>
+</div>
+<script>
+const BANK = __BANK__;
+const KEY = '__KEY__';
+const QTITLE = '__TITLE__'; const QFILE = '__FILE__';
+const QNOTE = __NOTE__; const QHANDOFF = '__HANDOFF__';
+const COLORS = ['var(--m1)','var(--m2)','var(--m3)','var(--m4)'];
+let state = {a:{}, d:{}};
+let storageOK = true;
+try{ const s = JSON.parse(localStorage.getItem(KEY)); if(s && s.a) state = {a:s.a, d:s.d||{}}; }catch(e){ storageOK = false; }
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(state)); storageOK = true; }catch(e){ storageOK = false; }
+  const el = document.getElementById('saved');
+  el.textContent = storageOK ? 'Progress saved in this browser' : 'Cannot save here; keep this tab open';
+  el.className = 'saved' + (storageOK ? '' : ' warn');
+}
+const $ = (s,r=document)=>r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function parseNum(s){ const t = String(s).replace(/[,$%\s]|S\$/g,''); if(t===''||isNaN(t)) return NaN; return parseFloat(t); }
+function fmtAns(q){ if(q.t==='m') return q.o[q.a]; return String(q.a); }
+function userAns(q,rec){ return q.t==='m' ? q.o[rec.v] : String(rec.v); }
+const all = []; BANK.forEach((m,mi)=>m.qs.forEach(q=>{ q._m = mi; all.push(q); }));
+document.getElementById('nTot').textContent = all.length;
+
+function build(){
+  const app = $('#app'); app.innerHTML = '';
+  const nav = $('#nav'); nav.innerHTML = '';
+  BANK.forEach((m,mi)=>{
+    const a = document.createElement('a'); a.href = '#mod'+mi; a.innerHTML = esc(m.mod)+' <span id="np'+mi+'"></span>'; nav.appendChild(a);
+    const sec = document.createElement('section'); sec.className = 'mod'; sec.id = 'mod'+mi; sec.style.setProperty('--mc', COLORS[mi]);
+    sec.innerHTML = '<div class="modtag">Module '+(mi+1)+' of '+BANK.length+'</div><h2>'+esc(m.title)+'</h2><p class="focus">'+esc(m.focus)+'</p><span class="modscore" id="ms'+mi+'"></span>'+(m.sheet?'<details class="sheet"><summary>Formula sheet (peek only after you try)</summary>'+m.sheet+'</details>':'');
+    let lastSec = null;
+    m.qs.forEach(q=>{
+      if(q.sec !== lastSec){ const h = document.createElement('h3'); h.className = 'sec'; h.textContent = q.sec; sec.appendChild(h); lastSec = q.sec; }
+      sec.appendChild(card(q));
+    });
+    app.appendChild(sec);
+  });
+  save(); refresh();
+}
+function card(q){
+  const d = document.createElement('div'); d.className = 'q'; d.id = 'q-'+q.id;
+  const rec = state.a[q.id];
+  let h = '<div class="qid">'+esc(q.id)+'</div><div class="qt">'+esc(q.q)+'</div>';
+  if(q.hint) h += '<div class="hint">'+esc(q.hint)+'</div>';
+  if(q.t==='m'){
+    q.o.forEach((o,i)=>{
+      let cls = 'opt';
+      if(rec){ if(i===q.a) cls += ' right'; else if(i===rec.v) cls += ' wrong'; }
+      const sel = rec ? rec.v===i : state.d[q.id]===i;
+      h += '<label class="'+cls+(sel&&!rec?' sel':'')+'"><input type="radio" name="'+q.id+'" value="'+i+'"'+(sel?' checked':'')+(rec?' disabled':'')+'><span>'+esc(o)+'</span></label>';
+    });
+  } else {
+    const v = rec ? rec.v : (state.d[q.id]||'');
+    h += '<input type="text" inputmode="decimal" autocomplete="off" placeholder="Your answer" value="'+esc(v)+'"'+(rec?' disabled':'')+'>';
+  }
+  h += '<div class="row"><button class="chk"'+(rec?' disabled':'')+'>Check</button></div>';
+  if(rec){
+    d.classList.add('done', rec.ok?'ok':'bad');
+    h += '<div class="fb '+(rec.ok?'ok':'bad')+'"><b>'+(rec.ok?'Correct':'Wrong. Correct answer: '+esc(fmtAns(q)))+'</b>'+esc(q.exp)+'</div>';
+  }
+  d.innerHTML = h;
+  d.querySelectorAll('input[type=radio]').forEach(r=>r.addEventListener('change',()=>{ state.d[q.id] = parseInt(r.value); save(); d.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel')); r.closest('.opt').classList.add('sel'); }));
+  const ti = d.querySelector('input[type=text]');
+  if(ti){ ti.addEventListener('input',()=>{ state.d[q.id] = ti.value; save(); }); ti.addEventListener('keydown',e=>{ if(e.key==='Enter') d.querySelector('.chk').click(); }); }
+  d.querySelector('.chk').addEventListener('click',()=>check(q,d));
+  return d;
+}
+function check(q,d){
+  if(state.a[q.id]) return;
+  let v, ok;
+  if(q.t==='m'){ const r = d.querySelector('input[type=radio]:checked'); if(!r) return; v = parseInt(r.value); ok = v===q.a; }
+  else { const t = d.querySelector('input[type=text]').value.trim(); if(t==='') return; v = t; const n = parseNum(t); ok = !isNaN(n) && Math.abs(n-q.a) <= (q.tol||0.01) + 1e-9; }
+  state.a[q.id] = {v:v, ok:ok}; save();
+  const nd = card(q); d.replaceWith(nd); refresh();
+}
+function stats(){
+  const per = BANK.map(m=>({tot:m.qs.length,ans:0,ok:0}));
+  all.forEach(q=>{ const r = state.a[q.id]; if(r){ per[q._m].ans++; if(r.ok) per[q._m].ok++; } });
+  return per;
+}
+function refresh(){
+  const per = stats(); let a=0,o=0;
+  per.forEach((p,i)=>{ a+=p.ans; o+=p.ok; $('#ms'+i).textContent = p.ok+' correct of '+p.ans+' answered ('+p.tot+' questions)'; $('#np'+i).textContent = p.ans+'/'+p.tot; });
+  $('#nAns').textContent = a; $('#nOk').textContent = o; $('#nBad').textContent = a-o;
+  let h = '<table><tr><th>Module</th><th>Answered</th><th>Correct</th><th>Wrong</th><th>Not attempted</th></tr>';
+  per.forEach((p,i)=>{ h += '<tr><td>'+esc(BANK[i].mod)+'</td><td>'+p.ans+'/'+p.tot+'</td><td>'+p.ok+'</td><td>'+(p.ans-p.ok)+'</td><td>'+(p.tot-p.ans)+'</td></tr>'; });
+  h += '<tr><th>Total</th><th>'+a+'/'+all.length+'</th><th>'+o+'</th><th>'+(a-o)+'</th><th>'+(all.length-a)+'</th></tr></table>';
+  const wrong = all.filter(q=>state.a[q.id] && !state.a[q.id].ok);
+  if(wrong.length){ h += '<p class="note">Wrong so far: '+wrong.map(q=>esc(q.id)).join(', ')+'</p>'; }
+  $('#resBody').innerHTML = h;
+}
+function today(){ const d = new Date(); const p = n=>String(n).padStart(2,'0'); return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate()); }
+function makePrompt(){
+  const per = stats(); let a=0,o=0; per.forEach(p=>{a+=p.ans;o+=p.ok;});
+  const L = [];
+  L.push('Please update my study log using the study-log-update skill. The file is '+QHANDOFF+'. Do not commit. Change only the '+BANK.length+' sections named below and leave every other section as it is.');
+  L.push('');
+  L.push('Source: I took the "'+QTITLE+'" (self-marking HTML, '+all.length+' questions, file '+QFILE+') on '+today()+'. These are real widget results marked by the page, not my own estimate. '+QNOTE+' If I took this quiz before, keep the earlier attempts in the log and add this one as a new repetition with the date. Do not overwrite earlier scores.');
+  L.push('');
+  L.push('Overall: '+o+' correct of '+a+' answered ('+(a?Math.round(o/a*100):0)+'%), '+(all.length-a)+' not attempted, out of '+all.length+' questions.');
+  L.push('');
+  L.push('Per module and where to log it:');
+  per.forEach((p,i)=>{ L.push('- '+BANK[i].log+' ['+BANK[i].mod+']: '+p.ok+' correct of '+p.ans+' answered, '+(p.ans-p.ok)+' wrong, '+(p.tot-p.ans)+' not attempted (of '+p.tot+').'); });
+  L.push('');
+  const wrong = all.filter(q=>state.a[q.id] && !state.a[q.id].ok);
+  L.push('Questions I got wrong ('+wrong.length+'):');
+  if(!wrong.length) L.push('None.');
+  BANK.forEach((m,mi)=>{
+    const w = wrong.filter(q=>q._m===mi);
+    if(!w.length) return;
+    L.push('');
+    L.push('['+m.mod+']');
+    w.forEach(q=>{
+      L.push('- '+q.id+' (topic: '+q.sec+')');
+      L.push('  Question: '+q.q);
+      L.push('  My answer: '+userAns(q,state.a[q.id]));
+      L.push('  Correct answer: '+fmtAns(q));
+      L.push('  Rule or working: '+q.exp);
+    });
+  });
+  L.push('');
+  const right = all.filter(q=>state.a[q.id] && state.a[q.id].ok);
+  L.push('Questions I got right ('+right.length+'): '+(right.length? right.map(q=>q.id).join(', ') : 'none')+'.');
+  const na = all.filter(q=>!state.a[q.id]);
+  L.push('Not attempted ('+na.length+'): '+(na.length? na.map(q=>q.id).join(', ') : 'none')+'.');
+  L.push('');
+  L.push('What to write:');
+  L.push('1. In each of the '+BANK.length+' sections, add this result under Scores as a widget score, with the date and the counts above.');
+  L.push('2. Rewrite Weak spots in priority order: topics I missed first (use the topic names and the rules above), then topics I got fully right marked as "cleared on the widget, keep for spaced review".');
+  L.push('3. Keep all existing verified facts and unconfirmed notes. Add any rule above that is not already there.');
+  L.push('4. Where a section already says a topic is a weak spot for a stated reason, keep that reason. Update the Last updated line, do not commit, then show me the updated sections.');
+  return L.join('\n');
+}
+$('#mk').addEventListener('click',()=>{ $('#prompt').value = makePrompt(); $('#cp').disabled = false; $('#cpMsg').textContent = ''; });
+$('#cp').addEventListener('click',async()=>{
+  const ta = $('#prompt'); let ok = false;
+  try{ await navigator.clipboard.writeText(ta.value); ok = true; }catch(e){}
+  if(!ok){ ta.removeAttribute('readonly'); ta.select(); try{ ok = document.execCommand('copy'); }catch(e){} ta.setAttribute('readonly',''); }
+  $('#cpMsg').textContent = ok ? 'Copied. Paste it into Claude Code.' : 'Copy failed. Select the text and copy it yourself.';
+});
+function doReset(){ state = {a:{}, d:{}}; save(); $('#prompt').value=''; $('#cp').disabled = true; $('#cpMsg').textContent=''; showAsk(false); build(); window.scrollTo(0,0); }
+function showAsk(on){ $('#rs').hidden = on; $('#rsAsk').hidden = !on; $('#rs2').hidden = on; $('#rsAsk2').hidden = !on; }
+$('#rs').addEventListener('click',()=>showAsk(true));
+$('#rs2').addEventListener('click',()=>showAsk(true));
+$('#rsNo').addEventListener('click',()=>showAsk(false));
+$('#rsNo2').addEventListener('click',()=>showAsk(false));
+$('#rsYes').addEventListener('click',doReset);
+$('#rsYes2').addEventListener('click',doReset);
+build();
+</script>
+</body>
+</html>

@@ -1,0 +1,494 @@
+[
+ {
+  "mod": "Investments 1",
+  "title": "Investments, Topic 1: formulas and calculations",
+  "focus": "Formula recall first, then calculation drills. Open the formula sheet only after you try.",
+  "log": "## Investments Topic 1",
+  "sheet": "<p><b>Formulas</b></p><ul><li>HPR = (ending - starting + dividends) / starting</li><li>Annualised = (1 + HPR)^(12 / months held) - 1</li><li>Arithmetic average = sum of returns / n</li><li>Geometric average = [(1+r1)(1+r2)...(1+rn)]^(1/n) - 1 (always at most the arithmetic)</li><li>Dollar-weighted return = IRR of the investor's cash flows</li><li>z = (x - mean) / standard deviation. About 68% lies within one standard deviation of the mean.</li></ul><p><b>Memory hooks</b></p><ul><li>HPR: gain over cost. The bottom is always what you paid.</li><li>Annualising exponent = how many of these periods fit in a year (12 divided by months).</li><li>Geometric: multiply (1 + r), take the nth root, subtract 1.</li><li>z-score: distance from the mean, counted in standard deviations.</li></ul>",
+  "qs": [
+   {
+    "id": "IV-1",
+    "sec": "1. Formula recall",
+    "q": "Which formula gives the holding period return (HPR)?",
+    "t": "m",
+    "o": [
+     "(ending price - starting price) / ending price",
+     "(ending price - starting price + dividends) / starting price",
+     "(ending price + dividends) / starting price",
+     "(ending price - starting price - dividends) / starting price"
+    ],
+    "a": 1,
+    "exp": "HPR = gain over cost = (ending - starting + dividends) / starting. Divide by what you paid, and add dividends to the gain."
+   },
+   {
+    "id": "IV-2",
+    "sec": "1. Formula recall",
+    "q": "Which formula annualises a holding period return?",
+    "t": "m",
+    "o": [
+     "(1 + HPR)^(months / 12) - 1",
+     "HPR x (12 / months)",
+     "(1 + HPR)^(12 / months) - 1",
+     "(1 + HPR)^(1 / months) - 1"
+    ],
+    "a": 2,
+    "exp": "Annualised = (1 + HPR)^(12 / months held) - 1. The exponent asks: how many of these periods fit in a year? A 3-month return repeats 4 times, so the exponent is 12/3 = 4."
+   },
+   {
+    "id": "IV-3",
+    "sec": "1. Formula recall",
+    "q": "Which formula gives the geometric average return over n years?",
+    "t": "m",
+    "o": [
+     "Sum of the returns / n",
+     "[(1+r1)(1+r2)...(1+rn)]^(1/n) - 1",
+     "(1+r1)(1+r2)...(1+rn)^n - 1",
+     "[(1+r1)(1+r2)...(1+rn)]^(1/n)"
+    ],
+    "a": 1,
+    "exp": "Geometric: multiply the growth factors (1 + r), take the nth root (power 1/n), then subtract 1 to get back to a return."
+   },
+   {
+    "id": "IV-4",
+    "sec": "1. Formula recall",
+    "q": "Which formula gives the z-score of a value x?",
+    "t": "m",
+    "o": [
+     "(x - mean) / standard deviation",
+     "(x - mean) / variance",
+     "mean / standard deviation",
+     "(x x mean) / standard deviation"
+    ],
+    "a": 0,
+    "exp": "z = (x - mean) / standard deviation. It tells you how many standard deviations x is from the mean. About 68% of outcomes lie within one standard deviation either side of the mean."
+   },
+   {
+    "id": "IV-5",
+    "sec": "1. Formula recall",
+    "q": "The dollar-weighted return is:",
+    "t": "m",
+    "o": [
+     "The average of yearly returns",
+     "The IRR of the investor's cash flows",
+     "The geometric average of yearly returns",
+     "The HPR divided by the number of years"
+    ],
+    "a": 1,
+    "exp": "Dollar-weighted return = the IRR of the investor's own cash flows (Topic 1 slides 38 and 39), so it depends on when money goes in and out."
+   },
+   {
+    "id": "IV-6",
+    "sec": "1. Formula recall",
+    "q": "Returns vary from year to year. How do the geometric and arithmetic averages compare?",
+    "t": "m",
+    "o": [
+     "Geometric is higher",
+     "Geometric is lower than or equal to arithmetic",
+     "They are always equal",
+     "Arithmetic is lower"
+    ],
+    "a": 1,
+    "exp": "Geometric is less than or equal to arithmetic. They are equal only if every return is the same. Losses shrink the base later gains compound on."
+   },
+   {
+    "id": "IV-7",
+    "sec": "2. Holding period return",
+    "q": "You buy a stock at $25.00, receive a $0.50 dividend and sell at $26.75. What is the holding period return (%)? Give 2 decimal places.",
+    "t": "n",
+    "a": 9.0,
+    "tol": 0.01,
+    "exp": "HPR = (26.75 - 25.00 + 0.50) / 25.00 = 2.25 / 25.00 = 9.00%.",
+    "hint": "Step 1: gain = ending - starting + dividends. Step 2: divide by starting price."
+   },
+   {
+    "id": "IV-8",
+    "sec": "2. Holding period return",
+    "q": "You buy a stock at $8.40, receive a $0.20 dividend and sell at $7.56. What is the holding period return (%)? Give 2 decimal places. Use a minus sign for a loss.",
+    "t": "n",
+    "a": -7.62,
+    "tol": 0.01,
+    "exp": "HPR = (7.56 - 8.40 + 0.20) / 8.40 = -0.64 / 8.40 = -7.62%. The price fell 0.84 and the dividend gives back 0.20.",
+    "hint": ""
+   },
+   {
+    "id": "IV-9",
+    "sec": "3. Annualising",
+    "q": "A 3-month holding period return is 2%. What is the annualised return (%)? Give 2 decimal places.",
+    "t": "n",
+    "a": 8.24,
+    "tol": 0.01,
+    "exp": "Exponent = 12 / 3 = 4. Annualised = 1.02^4 - 1 = 1.0824 - 1 = 8.24%. Note this is more than 2% x 4 = 8% because of compounding.",
+    "hint": ""
+   },
+   {
+    "id": "IV-10",
+    "sec": "3. Annualising",
+    "q": "An 8-month holding period return is 12%. What is the annualised return (%)? Give 2 decimal places.",
+    "t": "n",
+    "a": 18.53,
+    "tol": 0.01,
+    "exp": "Exponent = 12 / 8 = 1.5. Annualised = 1.12^1.5 - 1 = 1.1853 - 1 = 18.53%.",
+    "hint": ""
+   },
+   {
+    "id": "IV-11",
+    "sec": "3. Annualising",
+    "q": "A 24-month holding period return is 6%. What is the annualised return (%)? Give 2 decimal places.",
+    "t": "n",
+    "a": 2.96,
+    "tol": 0.01,
+    "exp": "Exponent = 12 / 24 = 0.5. Annualised = 1.06^0.5 - 1 = 1.0296 - 1 = 2.96%. Longer than a year means the exponent is below 1.",
+    "hint": ""
+   },
+   {
+    "id": "IV-12",
+    "sec": "3. Annualising",
+    "q": "You buy a stock at $40.00, receive a $1.00 dividend and sell it at $42.50 after 6 months. What is the annualised return (%)? Give 2 decimal places.",
+    "t": "n",
+    "a": 18.27,
+    "tol": 0.01,
+    "exp": "Step 1: HPR = (42.50 - 40.00 + 1.00) / 40.00 = 3.50 / 40.00 = 8.75%. Step 2: exponent = 12 / 6 = 2, so annualised = 1.0875^2 - 1 = 18.27%.",
+    "hint": ""
+   },
+   {
+    "id": "IV-13",
+    "sec": "4. Averages and IRR",
+    "q": "A fund returned +12%, -6%, +9% and +3% in four years. What is the arithmetic average return (%)? Give 2 decimal places.",
+    "t": "n",
+    "a": 4.5,
+    "tol": 0.01,
+    "exp": "Arithmetic = (12 - 6 + 9 + 3) / 4 = 18 / 4 = 4.50%.",
+    "hint": ""
+   },
+   {
+    "id": "IV-14",
+    "sec": "4. Averages and IRR",
+    "q": "The same fund returned +12%, -6%, +9% and +3%. What is the geometric average return (%)? Give 2 decimal places.",
+    "t": "n",
+    "a": 4.27,
+    "tol": 0.011,
+    "exp": "Geometric = (1.12 x 0.94 x 1.09 x 1.03)^(1/4) - 1 = (1.18199)^(0.25) - 1 = 4.27%. It is lower than the arithmetic 4.50%.",
+    "hint": ""
+   },
+   {
+    "id": "IV-15",
+    "sec": "4. Averages and IRR",
+    "q": "An investment returns +50% in year 1 and -50% in year 2. What is the geometric average return per year (%)? Give 2 decimal places. Use a minus sign for a loss.",
+    "t": "n",
+    "a": -13.4,
+    "tol": 0.011,
+    "exp": "Geometric = (1.50 x 0.50)^(1/2) - 1 = 0.75^0.5 - 1 = 0.8660 - 1 = -13.40%. The arithmetic average is 0%, which hides the fact that $100 ends at $75.",
+    "hint": ""
+   },
+   {
+    "id": "IV-16",
+    "sec": "4. Averages and IRR",
+    "q": "An investor puts in $1,000 now, receives $100 at the end of year 1 and $1,100 at the end of year 2 (final sale). What is the dollar-weighted return, the IRR (%)? Give 2 decimal places.",
+    "t": "n",
+    "a": 10.0,
+    "tol": 0.01,
+    "exp": "Try 10%: 100 / 1.10 + 1,100 / 1.10^2 = 90.91 + 909.09 = 1,000. So the IRR is 10.00%. IRR is the rate that makes the present value of inflows equal the amount invested.",
+    "hint": "Test 10% first."
+   },
+   {
+    "id": "IV-17",
+    "sec": "5. Normal distribution and risk",
+    "q": "Returns are normal with mean 9% and standard deviation 5%. What is the z-score for a return of -1%? Give 2 decimal places.",
+    "t": "n",
+    "a": -2.0,
+    "tol": 0.01,
+    "exp": "z = (-1 - 9) / 5 = -10 / 5 = -2.00.",
+    "hint": ""
+   },
+   {
+    "id": "IV-18",
+    "sec": "5. Normal distribution and risk",
+    "q": "Returns are normal with mean 6% and standard deviation 10%. Using the 68% rule, what is the upper end (%) of the range that contains about 68% of outcomes?",
+    "t": "n",
+    "a": 16,
+    "tol": 0.5,
+    "exp": "68% lies within one standard deviation of the mean: 6 +/- 10 gives -4% to 16%. The upper end is 16%.",
+    "hint": ""
+   },
+   {
+    "id": "IV-19",
+    "sec": "5. Normal distribution and risk",
+    "q": "Returns are normal with mean 6% and standard deviation 10%. Using the 68% rule, what is the probability (%) of a return above 16%? Round to a whole number.",
+    "t": "n",
+    "a": 16,
+    "tol": 0.5,
+    "exp": "16% is one standard deviation above the mean. 68% is inside, so 32% is outside, and half of that, 16%, is in the upper tail.",
+    "hint": ""
+   },
+   {
+    "id": "IV-20",
+    "sec": "5. Normal distribution and risk",
+    "q": "A company's CEO resigns suddenly and its share price falls while the market is flat. What type of risk is this?",
+    "t": "m",
+    "o": [
+     "Systematic risk",
+     "Unsystematic (company-specific) risk",
+     "Interest rate risk for all stocks",
+     "Inflation risk"
+    ],
+    "a": 1,
+    "exp": "It affects one company, so it is unsystematic and can be reduced by diversification. A market-wide rate rise is systematic."
+   }
+  ]
+ },
+ {
+  "mod": "Commercial Banking 2",
+  "title": "Commercial Banking, Topic 2: loan formulas and calculations",
+  "focus": "Formula recall first, then fixed instalment and fixed principal drills. Open the formula sheet only after you try.",
+  "log": "## Commercial Banking Topic 2",
+  "sheet": "<p><b>Steps for every loan question</b></p><ol><li>r = annual rate / 12, n = years x 12.</li><li>Decide: equal instalments or fixed principal?</li><li>Then use the right formula.</li></ol><p><b>Fixed instalment (equal payments)</b></p><ul><li>A = P x r / [1 - (1 + r)^-n]</li><li>Total interest = A x n - P (subtract P)</li></ul><p><b>Fixed principal</b></p><ul><li>R = P / n</li><li>Instalment in a month = R + balance before that payment x r</li><li>First = R + P x r. Last = R + R x r.</li><li>Total interest = r x R x n(n+1)/2, or (first interest + last interest) / 2 x n</li></ul><p><b>Memory hooks</b></p><ul><li>Two steps always come first: r and n in months.</li><li>Fixed principal: the principal part never changes, the interest part falls.</li><li>Fixed principal costs a little less interest, but starts with a bigger payment.</li></ul><p><b>Facilities</b>: equipment up to 8 years (financing up to 90%), commercial property up to 30 years, working capital up to 5 years unsecured. Factoring pays up to 80 to 90%.</p>",
+  "qs": [
+   {
+    "id": "CB-1",
+    "sec": "1. Formula recall",
+    "q": "A loan has an annual rate of 8% with monthly payments over 3 years. What are r and n?",
+    "t": "m",
+    "o": [
+     "r = 8% and n = 3",
+     "r = 0.67% per month and n = 36",
+     "r = 0.67% per month and n = 3",
+     "r = 8% and n = 36"
+    ],
+    "a": 1,
+    "exp": "r = annual rate / 12 = 8% / 12 = 0.6667% per month. n = years x 12 = 36 months. Always convert both to months."
+   },
+   {
+    "id": "CB-2",
+    "sec": "1. Formula recall",
+    "q": "Which formula gives a fixed monthly instalment?",
+    "t": "m",
+    "o": [
+     "A = P x r x n",
+     "A = P x r / [1 - (1 + r)^-n]",
+     "A = P / n",
+     "A = P x (1 + r)^n"
+    ],
+    "a": 1,
+    "exp": "Fixed (equal) instalment: A = P x r / [1 - (1 + r)^-n]. The other forms are wrong: P / n is the fixed principal part only."
+   },
+   {
+    "id": "CB-3",
+    "sec": "1. Formula recall",
+    "q": "In a fixed principal loan, what is the monthly principal repayment?",
+    "t": "m",
+    "o": [
+     "P x r",
+     "P / n",
+     "P x r / [1 - (1 + r)^-n]",
+     "P x (1 + r)^n"
+    ],
+    "a": 1,
+    "exp": "Fixed principal: R = P / n. The instalment changes each month because the interest part falls as the balance falls."
+   },
+   {
+    "id": "CB-4",
+    "sec": "1. Formula recall",
+    "q": "In a fixed principal loan, how is the interest for a given month worked out?",
+    "t": "m",
+    "o": [
+     "Original loan x r, every month",
+     "Balance before that month's payment x r",
+     "Principal repayment x r, every month",
+     "Original loan x r / n"
+    ],
+    "a": 1,
+    "exp": "Interest = outstanding balance before that payment x r. The instalment for month k = R + balance x r, and the balance falls by R each month."
+   },
+   {
+    "id": "CB-5",
+    "sec": "1. Formula recall",
+    "q": "Which gives the total interest for a fixed instalment loan?",
+    "t": "m",
+    "o": [
+     "A x n - P",
+     "A x n",
+     "P x r x n",
+     "A - P"
+    ],
+    "a": 0,
+    "exp": "Total interest = total paid - principal = A x n - P. Forgetting to subtract P is a common mistake."
+   },
+   {
+    "id": "CB-6",
+    "sec": "1. Formula recall",
+    "q": "Which formula gives the total interest for a fixed principal loan?",
+    "t": "m",
+    "o": [
+     "r x R x n(n+1) / 2",
+     "r x P x n",
+     "R x n",
+     "r x R x n"
+    ],
+    "a": 0,
+    "exp": "Total interest = r x R x n(n+1)/2. Or take the average of the first and last month's interest and multiply by n."
+   },
+   {
+    "id": "CB-7",
+    "sec": "1. Formula recall",
+    "q": "A student works out a fixed instalment on a $200,000, 9% p.a., 20-year loan with monthly payments using r = 9% and n = 20. What went wrong?",
+    "t": "m",
+    "o": [
+     "Nothing, the formula allows annual figures",
+     "r and n must both be monthly: r = 0.75% and n = 240",
+     "Only n is wrong",
+     "Only r is wrong"
+    ],
+    "a": 1,
+    "exp": "With monthly payments r and n must be monthly: r = 9% / 12 = 0.75% and n = 20 x 12 = 240. Both were wrong."
+   },
+   {
+    "id": "CB-8",
+    "sec": "2. Fixed instalment calculations",
+    "q": "A $150,000 loan at 6% p.a. is repaid in 12 equal monthly instalments (monthly rest). What is the monthly instalment in dollars? Give 2 decimal places.",
+    "t": "n",
+    "a": 12909.96,
+    "tol": 0.02,
+    "exp": "r = 0.06 / 12 = 0.005, n = 12. A = 150,000 x 0.005 / [1 - 1.005^-12] = 750 / 0.058100 = 12,909.96.",
+    "hint": ""
+   },
+   {
+    "id": "CB-9",
+    "sec": "2. Fixed instalment calculations",
+    "q": "For that loan (instalment $12,909.96 over 12 months, principal $150,000), what is the total interest in dollars? Give 2 decimal places.",
+    "t": "n",
+    "a": 4919.57,
+    "tol": 1,
+    "exp": "Total paid = 12,909.96 x 12 = 154,919.52 (4,919.57 with the unrounded instalment). Total interest = total paid - P = about 4,919.57.",
+    "hint": ""
+   },
+   {
+    "id": "CB-10",
+    "sec": "2. Fixed instalment calculations",
+    "q": "A $500,000 loan at 12% p.a. is repaid in 36 equal monthly instalments (monthly rest). What is the monthly instalment in dollars? Give 2 decimal places.",
+    "t": "n",
+    "a": 16607.15,
+    "tol": 0.02,
+    "exp": "r = 0.12 / 12 = 0.01, n = 36. A = 500,000 x 0.01 / [1 - 1.01^-36] = 5,000 / 0.301070 = 16,607.15.",
+    "hint": ""
+   },
+   {
+    "id": "CB-11",
+    "sec": "2. Fixed instalment calculations",
+    "q": "For the loan of $500,000 at 12% p.a. over 36 months with a monthly instalment of $16,607.15, what is the total interest in dollars? Give 2 decimal places.",
+    "t": "n",
+    "a": 97857.58,
+    "tol": 2,
+    "exp": "Total paid = 16,607.15 x 36 = 597,857.40 (97,857.58 with the unrounded instalment). Total interest = about 97,857.6.",
+    "hint": ""
+   },
+   {
+    "id": "CB-12",
+    "sec": "3. Fixed principal calculations",
+    "q": "A $120,000 loan at 12% p.a. is repaid over 12 months with a fixed principal each month. What is the monthly principal repayment in dollars? Give 2 decimal places.",
+    "t": "n",
+    "a": 10000.0,
+    "tol": 0.01,
+    "exp": "R = P / n = 120,000 / 12 = 10,000.00.",
+    "hint": ""
+   },
+   {
+    "id": "CB-13",
+    "sec": "3. Fixed principal calculations",
+    "q": "A $120,000 loan at 12% p.a. is repaid over 12 months with a fixed principal of $10,000 a month. What is the first month's instalment in dollars? Give 2 decimal places.",
+    "t": "n",
+    "a": 11200.0,
+    "tol": 0.01,
+    "exp": "r = 1%. First instalment = R + P x r = 10,000 + 120,000 x 0.01 = 10,000 + 1,200 = 11,200.00.",
+    "hint": "Interest is on the balance, which is the full loan in month 1."
+   },
+   {
+    "id": "CB-14",
+    "sec": "3. Fixed principal calculations",
+    "q": "Same loan ($120,000, 12% p.a., 12 months, fixed principal $10,000). What is the second month's instalment in dollars? Give 2 decimal places.",
+    "t": "n",
+    "a": 11100.0,
+    "tol": 0.01,
+    "exp": "After month 1 the balance is 110,000. Month 2 = 10,000 + 110,000 x 0.01 = 10,000 + 1,100 = 11,100.00.",
+    "hint": ""
+   },
+   {
+    "id": "CB-15",
+    "sec": "3. Fixed principal calculations",
+    "q": "Same loan. What is the last (12th) instalment in dollars? Give 2 decimal places.",
+    "t": "n",
+    "a": 10100.0,
+    "tol": 0.01,
+    "exp": "Before the last payment the balance is 10,000. Last = 10,000 + 10,000 x 0.01 = 10,100.00.",
+    "hint": ""
+   },
+   {
+    "id": "CB-16",
+    "sec": "3. Fixed principal calculations",
+    "q": "Same loan. What is the total interest over 12 months in dollars? Give 2 decimal places.",
+    "t": "n",
+    "a": 7800.0,
+    "tol": 1,
+    "exp": "Total interest = r x R x n(n+1)/2 = 0.01 x 10,000 x 12 x 13 / 2 = 7,800. Check: (1,200 + 100) / 2 x 12 = 7,800.",
+    "hint": ""
+   },
+   {
+    "id": "CB-17",
+    "sec": "3. Fixed principal calculations",
+    "q": "A $360,000 loan at 8% p.a. is repaid over 36 months with a fixed principal each month. What is the first month's instalment in dollars? Give 2 decimal places.",
+    "t": "n",
+    "a": 12400.0,
+    "tol": 0.01,
+    "exp": "R = 360,000 / 36 = 10,000. r = 0.08 / 12 = 0.006667. First = 10,000 + 360,000 x 0.006667 = 10,000 + 2,400 = 12,400.00.",
+    "hint": ""
+   },
+   {
+    "id": "CB-18",
+    "sec": "3. Fixed principal calculations",
+    "q": "Same loan ($360,000, 8% p.a., 36 months, fixed principal). What is the total interest in dollars? Give 2 decimal places.",
+    "t": "n",
+    "a": 44400.0,
+    "tol": 1,
+    "exp": "Total interest = r x R x n(n+1)/2 = 0.006667 x 10,000 x 36 x 37 / 2 = 0.006667 x 10,000 x 666 = 44,400.",
+    "hint": ""
+   },
+   {
+    "id": "CB-19",
+    "sec": "4. Comparing and facilities",
+    "q": "A $150,000 loan at 6% p.a. over 12 months has total interest of about $4,919.57 with fixed instalments. With fixed principal the total interest is $4,875.00. How much cheaper in dollars is fixed principal? Give 2 decimal places.",
+    "t": "n",
+    "a": 44.57,
+    "tol": 0.1,
+    "exp": "4,919.57 - 4,875.00 = 44.57. Fixed principal is cheaper because the balance falls faster, but its early instalments are higher.",
+    "hint": ""
+   },
+   {
+    "id": "CB-20",
+    "sec": "4. Comparing and facilities",
+    "q": "Which tenor is correct for equipment financing?",
+    "t": "m",
+    "o": [
+     "Up to 30 years, financing up to 90%",
+     "Up to 8 years, financing up to 90%",
+     "Up to 5 years unsecured",
+     "Up to 1 year only"
+    ],
+    "a": 1,
+    "exp": "Equipment up to 8 years with financing up to 90%. Commercial property up to 30 years. Working capital up to 5 years unsecured (Lecture 2, slides 19 and 20)."
+   },
+   {
+    "id": "CB-21",
+    "sec": "4. Comparing and facilities",
+    "q": "Which statement about an overdraft or revolving credit is correct?",
+    "t": "m",
+    "o": [
+     "Fixed repayment dates and no redrawing",
+     "Draw up to a limit, repay and redraw, with the bank having little control over usage",
+     "Only for 30-year property loans",
+     "Always secured on the borrower's house"
+    ],
+    "a": 1,
+    "exp": "Revolving credit and overdraft: draw up to a limit, repay and redraw, priced at prime plus a margin, reviewed yearly, and the bank has little control over usage (slides 9 to 11)."
+   }
+  ]
+ }
+]
