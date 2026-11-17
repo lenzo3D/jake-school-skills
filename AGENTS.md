@@ -6,7 +6,7 @@ This repo holds study skills in `skills/<name>/SKILL.md`. When the user asks for
 |---|---|
 | school | ALWAYS start here: shows a clickable widget asking which skill to run, then runs it |
 | import-sources | import or load slides, PDFs, notes as sources (do this first) |
-| complete-docx-work | complete any .docx coursework (tutorial, homework or assignment) in light blue inside the original file |
+| complete-docx-work | complete any .docx coursework inside the original file (asks first: tutorials and homework in light blue, assignments in plain text matching the brief) |
 | explain-my-work | write a separate explanation file for a teacher |
 | revision-widget | build a self-marking revision quiz, retest or formula drill |
 | lecture-video-transcribe | transcribe a lecture recording into a timestamped source |

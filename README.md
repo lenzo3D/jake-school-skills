@@ -46,9 +46,9 @@ School/
 **Before you run it:** Put the files in `<topic folder>/sources/`. Needs `pypdf` for PDFs. PowerPoint and Word need nothing extra. A scanned PDF (images only) gives no text, so ask for a text version.
 
 ### 3. complete-docx-work
-**Purpose:** Complete any Word-based coursework inside your original file, in light blue, without changing its fonts, layout or formatting. It is not only for tutorials or homework: it can complete your assignments as well.
+**Purpose:** Complete any Word-based coursework inside your original file without changing its fonts, layout or formatting. It is not only for tutorials or homework: it can complete your assignments as well.
 **Use it when:** You have a `.docx` tutorial, homework, case study or assignment and want answers written into it, cited to your slides. For an assignment, include its brief and marking rubric in `sources/` so the work is written to the criteria.
-**What it does:** Keeps a pristine copy, maps the document, writes the answers under each question, copies the body font, and checks every original paragraph is still there in order.
+**What it does:** First asks, with a clickable widget, whether this is a tutorial or homework, or an assignment. Tutorials and homework get short answers in light blue. Assignments get plain default text that matches your document, written to the brief and rubric. Then it keeps a pristine copy, maps the document, writes the answers under each question, copies the body font, and checks every original paragraph is still there in order.
 **Before you run it:** Run skill 1 first so answers can cite your sources. Needs `python-docx`. Close the file in Word first, or the save is blocked. The original is never edited; it works on a copy in `work/`.
 
 ### 4. explain-my-work

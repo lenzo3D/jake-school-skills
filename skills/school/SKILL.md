@@ -25,7 +25,7 @@ This is the first skill to use for any school request. Its job is to find out wh
 
    | Group | Options (skill name, what to say) |
    |---|---|
-   | Tutorials, homework, assignments | `import-sources`: load slides, briefs, rubrics and notes as sources (do this first). `complete-docx-work`: complete any Word task (tutorial, homework or full assignment) in light blue inside the original file. `explain-my-work`: write a separate file to talk through your work with a teacher. |
+   | Tutorials, homework, assignments | `import-sources`: load slides, briefs, rubrics and notes as sources (do this first). `complete-docx-work`: complete any Word task inside the original file. It asks first: tutorials and homework in light blue, assignments in plain text matching the brief. `explain-my-work`: write a separate file to talk through your work with a teacher. |
    | Revision and practice | `revision-widget`: self-marking revision quiz or retest. `kahoot-mock`: timed mock Kahoot with speed scoring and rivals. `log-and-recharge`: log a retest, then extra practice that is not logged. |
    | Lectures and marking | `lecture-video-transcribe`: turn a lecture recording into a timestamped transcript source. `mark-my-work`: realistic mark and fix list against the rubric. |
    | Study log | `study-log-update`: record scores and weak spots. `study-log-summary`: show the whole log as one table (read-only). |

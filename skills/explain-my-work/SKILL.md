@@ -9,7 +9,7 @@ This is step 3 of 3. The explanation file is separate from the completed work. I
 
 ## Steps
 
-1. **Read the answers as they stand.** Take the text of the completed work, from the light-blue paragraphs and cells, so the explanation matches what the student will hand in. Read the question text too. Do not write a different answer from the one in the work. If you find a wrong figure or claim, fix the work first, using `complete-docx-work`, and then come back here.
+1. **Read the answers as they stand.** Take the text of the completed work so the explanation matches what the student will hand in. For tutorials and homework the answers are the light-blue paragraphs and cells. For an assignment they are plain text, so read the whole document (compare with the original if you still have it). Read the question text too. Do not write a different answer from the one in the work. If you find a wrong figure or claim, fix the work first, using `complete-docx-work`, and then come back here.
 
 2. **Read the sources you cite.** Use `sources/text/` from the import step. Check the paragraph and slide numbers you will quote.
 

@@ -10,7 +10,8 @@ it in place.
 
 answers.json:
 {
-  "colour": "5B9BD5",
+  "colour": "5B9BD5",      (tutorial or homework: light blue)
+  "colour": null,          (assignment: no colour is set, so the text matches the document's own body text)
   "inserts": [
     {"after_question": "Question 1", "lines": ["First answer paragraph.", "Second."]},
     {"after_text": "Answer the question below", "lines": ["..."]}
@@ -31,7 +32,10 @@ you target a non-empty cell, so only fill empty slots.
 Formatting rules the script follows:
 - New runs copy the rPr (font, size, spacing) of a body paragraph's first run.
 - New paragraphs copy the pPr of that body paragraph, minus list numbering.
-- Only the colour is set on new runs. Font names are never set.
+- Only the colour is set on new runs, and only when "colour" is a hex value.
+  With "colour": null (also "none" or "auto") no colour is set at all, so the
+  answers use the same default text colour and font as the document's body text.
+  Font names are never set.
 After writing, it checks that every original non-empty paragraph is still in
 the output in the same order, and prints the counts it inserted.
 """
@@ -109,7 +113,8 @@ def make_paragraph(template_el, rpr, text, colour):
     t.text = text
     run.append(t)
     p.append(run)
-    Run(run, None).font.color.rgb = RGBColor.from_string(colour)
+    if colour:
+        Run(run, None).font.color.rgb = RGBColor.from_string(colour)
     return p
 
 
@@ -149,7 +154,8 @@ def fill_table_cell(doc, table_idx, row, col, text, colour):
     t.text = text
     run.append(t)
     cell.paragraphs[0]._p.append(run)
-    Run(run, None).font.color.rgb = RGBColor.from_string(colour)
+    if colour:
+        Run(run, None).font.color.rgb = RGBColor.from_string(colour)
 
 
 def check_original_kept(pristine_path, out_path):
@@ -167,6 +173,8 @@ def main():
     pristine, out_path, answers_path = sys.argv[1], sys.argv[2], sys.argv[3]
     spec = json.load(open(answers_path, encoding="utf8"))
     colour = spec.get("colour", "5B9BD5")
+    if colour is None or str(colour).strip().lower() in ("", "none", "auto", "default"):
+        colour = None
     doc = Document(pristine)
 
     inserted = 0
@@ -203,14 +211,21 @@ def main():
     doc.save(out_path)
 
     missing = check_original_kept(pristine, out_path)
-    coloured = sum(
-        1
-        for p in Document(out_path).paragraphs
-        for r in p.runs
-        if r.font.color and r.font.color.rgb is not None and str(r.font.color.rgb) == colour.upper()
+    coloured = (
+        sum(
+            1
+            for p in Document(out_path).paragraphs
+            for r in p.runs
+            if r.font.color and r.font.color.rgb is not None and str(r.font.color.rgb) == colour.upper()
+        )
+        if colour
+        else 0
     )
     print(f"saved {out_path}")
-    print(f"inserted items: {inserted}; coloured runs in output: {coloured}")
+    if colour:
+        print(f"inserted items: {inserted}; coloured runs in output: {coloured}")
+    else:
+        print(f"inserted items: {inserted}; no colour set (plain text matching the document)")
     if missing:
         print("WARNING: original text missing or reordered:")
         for m in missing[:10]:
