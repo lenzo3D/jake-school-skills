@@ -22,7 +22,7 @@ Be honest with the user about the limits: the scoring formula and streak bonus a
 
 ## Steps
 
-1. **Find the topic.** Use the topic the user names, or the one they are currently working on (the most recently imported `Commercial Banking Topic N/`, `Investments Topic N/` and so on). Read its lecture text in `sources/text/`. If nothing is imported, run `tutorial-import-files` first.
+1. **Find the topic.** Use the topic the user names, or the one they are currently working on (the most recently imported `Commercial Banking Topic N/`, `Investments Topic N/` and so on). Read its lecture text in `sources/text/`. If nothing is imported, run `import-sources` first.
 2. **Write 10 questions in Kahoot style.** They must be quick to read and answer:
    - Question text under about 140 characters, one idea, no long scenarios. Short calculations are fine if they can be done in the time limit (mental maths only, round numbers).
    - Exactly 4 options, each under about 60 characters, similar length, and plausible wrong answers (the common mix-ups from the slides).

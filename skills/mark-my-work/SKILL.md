@@ -1,6 +1,6 @@
 ---
-name: lecturer-mark-assignment
-description: Mark a student's assignment the way a strict but fair lecturer at the student's own school would, using an independent Opus subagent. It reads the submitted document against the assignment brief's marking rubric, gives a per-criterion mark, a total, an indicative grade, direct location-specific fixes, and exactly how much more work is needed to reach full marks. Use this whenever the user asks to mark, grade, score, assess, pre-mark or "check my assignment against the rubric", asks what mark or grade they would get, wants feedback as if from a lecturer or tutor, or wants to know how to reach the maximum mark, even if they never say "subagent". Trigger for Word, PDF or pasted submissions plus a brief or rubric. Do not use it to write or rewrite the assignment itself.
+name: mark-my-work
+description: Mark a student's finished coursework (assignment, report, homework or tutorial) the way a strict but fair lecturer at the student's own school would, using an independent Opus subagent. It reads the submitted document against the assignment brief's marking rubric, gives a per-criterion mark, a total, an indicative grade, direct location-specific fixes, and exactly how much more work is needed to reach full marks. Use this whenever the user asks to mark, grade, score, assess, pre-mark or "check my assignment against the rubric", asks what mark or grade they would get, wants feedback as if from a lecturer or tutor, or wants to know how to reach the maximum mark, even if they never say "subagent". Trigger for Word, PDF or pasted submissions plus a brief or rubric. Do not use it to write or rewrite the assignment itself.
 ---
 
 # Lecturer marking (independent subagent)

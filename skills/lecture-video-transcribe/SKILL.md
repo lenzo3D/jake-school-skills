@@ -5,7 +5,7 @@ description: Turn a recorded lecture video (Kaltura, Panopto, Echo360, Teams or 
 
 # Lecture video to usable source
 
-Goal: one Markdown file per lecture in `<topic folder>/sources/text/`, with `[hh:mm:ss]` markers, that the other school skills (tutorial answering, quizzes, Kahoot mock) can read and cite exactly like slides.
+Goal: one Markdown file per lecture in `<topic folder>/sources/text/`, with `[hh:mm:ss]` markers, that the other school skills (answering coursework, quizzes, Kahoot mock) can read and cite exactly like slides.
 
 ## The honest part, tell the user up front
 

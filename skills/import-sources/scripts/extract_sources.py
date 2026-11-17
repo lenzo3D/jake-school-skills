@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract readable text from tutorial source files (PDF, PPTX, DOCX, TXT, MD).
+"""Extract readable text from course source files (PDF, PPTX, DOCX, TXT, MD).
 
 Usage: python3 extract_sources.py <source_dir> <out_dir>
 

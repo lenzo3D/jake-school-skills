@@ -5,12 +5,12 @@ This repo holds study skills in `skills/<name>/SKILL.md`. When the user asks for
 | Skill | Use it when the user asks to |
 |---|---|
 | school | ALWAYS start here: shows a clickable widget asking which skill to run, then runs it |
-| tutorial-import-files | import or load slides, PDFs, notes as sources (do this first) |
-| tutorial-answer-docx | answer a .docx tutorial in light blue inside the original file |
-| tutorial-explanation-docx | write a separate explanation file for a teacher |
+| import-sources | import or load slides, PDFs, notes as sources (do this first) |
+| complete-docx-work | complete any .docx coursework (tutorial, homework or assignment) in light blue inside the original file |
+| explain-my-work | write a separate explanation file for a teacher |
 | revision-widget | build a self-marking revision quiz, retest or formula drill |
 | lecture-video-transcribe | transcribe a lecture recording into a timestamped source |
-| lecturer-mark-assignment | mark an assignment against its rubric before submission |
+| mark-my-work | mark an assignment against its rubric before submission |
 | study-log-update | record scores and weak spots in study-log/STUDY_LOG.md |
 | log-and-recharge | log a retest, then build unlogged extra practice |
 | study-log-summary | summarise the study log (read-only) |

@@ -1,6 +1,6 @@
 ---
 name: revision-widget
-description: Build a self-marking revision quiz or practice set for a university topic as a standalone HTML page that saves answers in the browser, marks itself, shows a score per module and builds a prompt to paste back into Claude Code to log the result in the study log. Use whenever the user asks for a quiz, revision test, practice questions, a consolidated quiz across topics, a formula drill, a retest on wrong answers, or an interactive way to revise a topic. Requires the topic's sources to be imported (see tutorial-import-files) or the questions to be given. For logging a result, hand over to study-log-update.
+description: Build a self-marking revision quiz or practice set for a university topic as a standalone HTML page that saves answers in the browser, marks itself, shows a score per module and builds a prompt to paste back into Claude Code to log the result in the study log. Use whenever the user asks for a quiz, revision test, practice questions, a consolidated quiz across topics, a formula drill, a retest on wrong answers, or an interactive way to revise a topic. Requires the topic's sources to be imported (see import-sources) or the questions to be given. For logging a result, hand over to study-log-update.
 ---
 
 # Revision widget

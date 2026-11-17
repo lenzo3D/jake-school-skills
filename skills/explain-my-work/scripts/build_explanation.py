@@ -5,7 +5,7 @@ Usage: python3 build_explanation.py <notes.md> <out.docx> [font]
 
 Supported Markdown: "# " title, "## " and "### " headings, "- " bullets,
 "  - " nested bullets, "1. " numbered lines, "---" rules (ignored), **bold**,
-*italic*, and plain paragraphs. The default font is Arial, the usual tutorial
+*italic*, and plain paragraphs. The default font is Arial, the usual coursework
 font. Pass a different font name as the third argument if needed.
 """
 import re
